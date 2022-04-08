@@ -6,11 +6,12 @@
 /*   By: pmillan- <pmillan-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 17:07:48 by pmillan-          #+#    #+#             */
-/*   Updated: 2022/03/30 17:06:33 by pmillan-         ###   ########.fr       */
+/*   Updated: 2022/04/08 16:59:34 by pmillan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 //revisar
 char	*ft_strrchr(const char *str, int c)
 {
@@ -18,7 +19,6 @@ char	*ft_strrchr(const char *str, int c)
 	char		*p;
 	char		chr;
 	char		*strcp;
-	size_t		container;
 
 	strcp = (char *)str;
 	p = NULL;
@@ -27,10 +27,7 @@ char	*ft_strrchr(const char *str, int c)
 	while (strcp[i])
 	{
 		if (strcp[i] == chr)
-		{
 			p = &strcp[i];
-			container = i;
-		}
 		i++;
 	}
 	if (c == 0)
@@ -40,9 +37,14 @@ char	*ft_strrchr(const char *str, int c)
 /*
 int main ()
 {
-  char str[] = "This is a sample string";
+  char str[] = "taaaaa";
   char * pch;
-  pch=ft_strrchr(str,'s');
-  printf ("Last occurence of 's' found at %ld \n",pch-str+1);
+  int c = 't' + 256;
+  pch=ft_strrchr(str, c);
+  if (pch == str)
+  {
+	  printf("SUCCESS\n");
+  }
+  printf ("Last occurence of %c found at %ld \n", c, pch-str+1);
   return 0;
 }*/

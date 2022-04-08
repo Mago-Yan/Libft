@@ -6,7 +6,7 @@
 /*   By: pmillan- <pmillan-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 16:59:03 by pmillan-          #+#    #+#             */
-/*   Updated: 2022/04/04 17:53:44 by pmillan-         ###   ########.fr       */
+/*   Updated: 2022/04/08 15:04:58 by pmillan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	if (ft_strlen(s) - start < len)
+		len = ft_strlen(s) - start;
 	i = 0;
 	subs = malloc(sizeof(char) * (len + 1));
 	if (subs == NULL)

@@ -6,7 +6,7 @@
 /*   By: pmillan- <pmillan-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 18:26:12 by pmillan-          #+#    #+#             */
-/*   Updated: 2022/03/25 18:43:22 by pmillan-         ###   ########.fr       */
+/*   Updated: 2022/04/08 14:12:21 by pmillan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_calloc(size_t num, size_t size)
 	void	*memory;
 	size_t	a;
 
+	if (num == SIZE_MAX || size == SIZE_MAX)
+		return (NULL);
 	a = num * size;
 	memory = malloc (a);
 	if (memory == NULL)

@@ -6,7 +6,7 @@
 /*   By: pmillan- <pmillan-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 13:46:20 by pmillan-          #+#    #+#             */
-/*   Updated: 2022/03/25 17:55:56 by pmillan-         ###   ########.fr       */
+/*   Updated: 2022/04/08 15:01:19 by pmillan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	p = NULL;
 	str = (char *)s;
-	chr = (unsigned char)c;
+	chr = (char)c;
 	i = 0;
-	while (str[i] && i < n)
+	while (i < n)
 	{
 		if (str[i] == chr)
 		{
@@ -33,7 +33,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		}
 		i++;
 	}
-	if (c == 0)
-		return (&str[i]);
-	return (p);
+	return (0);
 }
