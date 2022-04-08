@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmillan- <pmillan-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/05 16:23:04 by pmillan-          #+#    #+#             */
-/*   Updated: 2022/04/07 12:46:49 by pmillan-         ###   ########.fr       */
+/*   Created: 2022/04/07 11:26:44 by pmillan-          #+#    #+#             */
+/*   Updated: 2022/04/07 11:47:44 by pmillan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (lst)
+	t_list	*pointer;
+
+	pointer = lst;
+	while (pointer != NULL)
 	{
-		new->next = *lst;
-		*lst = new;
+		if (pointer->next == NULL)
+			return (pointer);
+		pointer = pointer->next;
 	}
+	return (pointer);
 }
-
-// int	main(void)
-// {
-// 	t_list	**lst;
-// 	t_list 	*new;
-// 	int	contentnew = 42;
-// 	int	content = 84;
-
-// 	*lst = ft_lstnew(content);
-// 	new = ft_lstnew(contentnew);
-// 	new->content = contentnew;
-// 	*list = list->content;
-// 	list->next = NULL;
-// 	list->content = content;
-// }

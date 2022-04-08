@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmillan- <pmillan-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/05 16:23:04 by pmillan-          #+#    #+#             */
-/*   Updated: 2022/04/07 12:46:49 by pmillan-         ###   ########.fr       */
+/*   Created: 2022/04/07 12:53:36 by pmillan-          #+#    #+#             */
+/*   Updated: 2022/04/07 18:52:25 by pmillan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	if (lst)
+	t_list	*next;
+
+	if (lst && del)
 	{
-		new->next = *lst;
-		*lst = new;
+		while ((*lst) != NULL)
+		{
+			next = (*lst)->next;
+			ft_lstdelone(*lst, del);
+			*lst = next;
+		}
 	}
 }
-
-// int	main(void)
-// {
-// 	t_list	**lst;
-// 	t_list 	*new;
-// 	int	contentnew = 42;
-// 	int	content = 84;
-
-// 	*lst = ft_lstnew(content);
-// 	new = ft_lstnew(contentnew);
-// 	new->content = contentnew;
-// 	*list = list->content;
-// 	list->next = NULL;
-// 	list->content = content;
-// }

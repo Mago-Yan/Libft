@@ -6,37 +6,22 @@
 /*   By: pmillan- <pmillan-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 17:38:24 by pmillan-          #+#    #+#             */
-/*   Updated: 2022/04/01 19:23:00 by pmillan-         ###   ########.fr       */
+/*   Updated: 2022/04/07 17:41:01 by pmillan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, char (*f)(unsigned int, char*))
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	i;
-	char	*fstr;
-	size_t	len;
+	unsigned int	i;
 
 	if (!s || !f)
+		return ;
+	i = 0;
+	while (s[i])
 	{
-	}
-	else
-	{
-		len = ft_strlen(s);
-		fstr = malloc(sizeof(char) * (len + 1));
-		if (fstr == NULL)
-		{
-		}
-		else
-		{
-			i = 0;
-			while (s[i])
-			{
-				fstr[i] = f(i, &s[i]);
-				i++;
-			}
-			fstr[i] = '\0';
-		}
+		f(i, &s[i]);
+		i++;
 	}
 }
