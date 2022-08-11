@@ -6,7 +6,7 @@
 /*   By: pmillan- <pmillan-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 15:48:49 by pmillan-          #+#    #+#             */
-/*   Updated: 2022/04/08 14:08:33 by pmillan-         ###   ########.fr       */
+/*   Updated: 2022/04/19 16:44:24 by pmillan-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,11 @@ char		*ft_strdup(const char *s);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		*ft_strjoin(const char *s1, const char *s2);
 char		*ft_strtrim(const char *s1, const char *set);
+/**
+@brief Definición de lo que hace
+@param s es una string
+@return cosas
+*/
 char		**ft_split(const char *s, char c);
 char		*ft_itoa(int n);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));

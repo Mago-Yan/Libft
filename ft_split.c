@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#define ERROR -1
 #include "libft.h"
 
 static int	numberofwords(const char *s, char c)
@@ -65,7 +66,7 @@ static int	fill_strsplit(const char *s, char **strsplit, int nwords, char c)
 		if (strsplit[i] == NULL)
 		{
 			free_array(strsplit, i);
-			return (-1);
+			return (ERROR);
 		}
 		i++;
 	}
@@ -85,7 +86,7 @@ char	**ft_split(const char *s, char c)
 	if (strsplit == NULL)
 		return (NULL);
 	i = fill_strsplit(s, strsplit, nwords, c);
-	if (i == -1)
+	if (i == ERROR)
 		return (NULL);
 	strsplit[i] = NULL;
 	return (strsplit);
